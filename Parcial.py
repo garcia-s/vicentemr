@@ -1,3 +1,5 @@
+# EJERCICIO 1
+
 from consumo_api import get_all_sw_characters_names, get_charter_by_id
 from consumo_api import altura
 from consumo_api import peso
@@ -30,7 +32,7 @@ if (personaje1 == "Yoda" or personaje2 == "Grievous" or  personaje1 == "Grievous
     print(personaje2)
 
 
-
+# EJERCICIO 2
 import json
 import requests
 
@@ -42,12 +44,13 @@ def consultar_personajes(url):
         return diccionario
     else:
         print('nope')
-
-
 urlbase = consultar_personajes('https://swapi.dev/api/people/')
 
+# def criterio (item):
+#     '''sirve para ordenar por sublistas '''
+#     return item['name']
+#     # return int(item['height'])
 
-# EJERCICIO 2
 
 sw_data = []
 
