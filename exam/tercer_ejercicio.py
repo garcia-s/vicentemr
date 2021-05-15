@@ -17,4 +17,5 @@ impares = []
 for x in lista:
     if((x % 2) != 0):
         impares.append(x)
+        
 print(impares)

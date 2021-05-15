@@ -27,10 +27,11 @@ if (peso(personaje1)) > (peso(personaje2)):
 else:
     print ("El personaje mas pesado es",personaje2["name"],"el peso es", altura(personaje2))
 
-if (personaje1 == "Yoda" or personaje2 == "Grievous" or  personaje1 == "Grievous" or personaje2 == "Yoda") :
-    print(personaje1)
-    print(personaje2)
+if (personaje1['name'].contains('Yoda') or personaje2.contains('Yoda')) :
+    print('Uno de los personajes es Yoda')
 
+if (personaje1['name'].contains('Grievous') or personaje2.contains('Grievous')) :
+    print('Uno de los personajes es Grievous')
 
 # EJERCICIO 2
 import json
