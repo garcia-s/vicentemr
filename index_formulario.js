@@ -1,32 +1,27 @@
+//Selecciona el elemento HTML con id "formulario-1"
+const formulario = document.getElementById('formulario-1')
+
+const nombre = document.getElementById('nombre');
+const dni = document.getElementById('dni');
+const telefono = document.getElementById('telefono')
+const email = document.getElementById('email')
+const comentarios = document.getElementById('comentarios')
 
 
-    
-const screen = document.getElementById('screen')
-const formulario = document.getElementById('Formulario')
 
 formulario.onsubmit = (e) => {
-    e.preventDefault();
+  // Previene que se ejecute la accion por defecto
+  e.preventDefault();
 
-
-    let nombre = document.getElementById('nombre').value;
-    let DNI = document.getElementById('nombre').value;
-
-    document.getElementById('display-nombre').innerHTML = nombre
-    document.getElementById('display-dni').innerHTML = DNI
-    
-    screen.classList.toggle('show-screen')
+  document.getElementById('display-nombre').innerText = nombre.value
+  document.getElementById('display-dni').innerText = dni.value
+  document.getElementById('display-telefono').innerText = telefono.value
+  document.getElementById('display-email').innerText = email.value
+  document.getElementById('display-comentarios').innerText = comentarios.value
+  window.alert(`Nombre: ${nombre.value}
+  DNI: ${dni.value} 
+  Tefono:${telefono.value}
+  Email:${email.value}
+  Comentarios:${comentarios.value} 
+  `)
 }
-
-var inputenviar = document.querySelector("#enviar")
-
-function enviardatos(){
-
-  alert("Datos Completados")
-
-
-}
-
-inputenviar.addEventListener("click", enviardatos);
-
-window.alert();
-

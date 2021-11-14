@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +10,7 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <script src="./index_formulario.js" type="module"></script>
+    <script defer src="./index_formulario.js" type="application/javascript"></script>
 
 
 
@@ -17,42 +18,26 @@
 
 
 </head>
+
 <body>
+    <!--Formulario-->
+    <form id='formulario-1'>
+        <input id='nombre' type="text" minlength="3" maxlength="20"/>
+        <input id='dni' type="number" minlength="9" maxlength="12"/>
+        <input id='telefono' type="number" minlength="9" maxlength="12"/>
+        <input id='email' type="email" />
+        <textarea id='comentarios'></textarea>
+        <button>Enviar</button>
+    </form>
 
-   
-
-<form class="contact-form"></form>
-
-    <legend>Formulario de contacto</legend>
-    <label for="">Nombre y Apellido:</label>
-    <input id="Nombre y Apellido" type="text" required placeholder="ingrese un nombre" title="">
-
-    <label for="">DNI:</label>
-    <input id="DNI" type="text" required placeholder="Ingrese su DNI" title="">
-
-    <label for="">Numero de telefono</label>
-    <input id="Numero de telefono" type="text" required placeholder="Ingrese su numero de telefono" title="">
-
-    <label for="">Email:</label>
-    <input id="Email" type="email" required placeholder="Ingrese su email" title="">
-
-    <label for="">Comentarios</label>
-    <textarea name="" ide="" cols="30" rows="10"  placeholder="Si necesitas una duda envia un comentario" data-atribute="*(1-255)$"></textarea>
- 
-    <input type="submit" value="Enviar" id="Enviar"></input>
-    <form onsubmit="send">
-    
-    <div class="contact-form-loader none">
-    <img src="" alt="">
+    <!--Display o muestra-->
+    <div>
+        <div id='display-nombre'> </div>
+        <div id='display-dni'> </div>
+        <div id='display-telefono'> </div>
+        <div id='display-email'> </div>
+        <div id='display-comentarios'> </div>
     </div>
-
-    <div class=" contact-form response none">
-   
-</div>
-
-
-
-
-</form>
 </body>
+
 </html>
