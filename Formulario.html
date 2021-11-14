@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/898b60d593.js" crossorigin="anonymous"></script>
+    <title>Formulario</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="./index_formulario.js" type="module"></script>
+
+
+
+
+
+
+</head>
+<body>
+
+   
+
+<form class="contact-form"></form>
+
+    <legend>Formulario de contacto</legend>
+    <label for="">Nombre y Apellido:</label>
+    <input id="Nombre y Apellido" type="text" required placeholder="ingrese un nombre" title="">
+
+    <label for="">DNI:</label>
+    <input id="DNI" type="text" required placeholder="Ingrese su DNI" title="">
+
+    <label for="">Numero de telefono</label>
+    <input id="Numero de telefono" type="text" required placeholder="Ingrese su numero de telefono" title="">
+
+    <label for="">Email:</label>
+    <input id="Email" type="email" required placeholder="Ingrese su email" title="">
+
+    <label for="">Comentarios</label>
+    <textarea name="" ide="" cols="30" rows="10"  placeholder="Si necesitas una duda envia un comentario" data-atribute="*(1-255)$"></textarea>
+ 
+    <input type="submit" value="Enviar" id="Enviar"></input>
+    <form onsubmit="send">
+    
+    <div class="contact-form-loader none">
+    <img src="" alt="">
+    </div>
+
+    <div class=" contact-form response none">
+   
+</div>
+
+
+
+
+</form>
+</body>
+</html>
