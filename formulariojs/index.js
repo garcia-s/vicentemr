@@ -1,43 +1,53 @@
-let cadena =
-  '[{"id":1,"dni":17663295,"nombre":"FABIAN MARCELO","apellido":"ABADIE","cursoNumero":1,"cursoLetra":"F"},{"id":2,"dni":38724762,"nombre":"MAIRA DAIANA","apellido":"ABALOS","cursoNumero":3,"cursoLetra":"M"},{"id":3,"dni":25447357,"nombre":"NOELIA LIDIA","apellido":"ABBA","cursoNumero":2,"cursoLetra":"N"},{"id":4,"dni":27577699,"nombre":"MARÍA SOLEDAD","apellido":"ACHOR","cursoNumero":2,"cursoLetra":"M"},{"id":900,"dni":11496581,"nombre":"JOSE MIGUEL","apellido":"ARMALEO","materia":"Fisica","año":1},{"id":899,"dni":35326658,"nombre":"ROSA DEL VALLE","apellido":"LOPEZ","materia":"Lengua","año":3},{"id":898,"dni":39638351,"nombre":"DANIELA BELEN","apellido":"BROGGI D`ATENA","materia":"Matematica","año":3},{"id":897,"dni":17275566,"nombre":"PABLO ALBERTO","apellido":"ALMEIDA","materia":"Quimica","año":1}]';
+let cadena = '[{"id":14, "modelo":"Ferrari F100", "anoFab":1998, "velMax":400, "cantPue":2,"cantRue":4},{"id":51, "modelo":"Dodge Viper", "anoFab":1991, "velMax":266,"cantPue":2, "cantRue":4},{"id":67, "modelo":"Boeing CH-47 Chinook","anoFab":1962, "velMax":302, "altMax":6, "autonomia":1200},{"id":666,"modelo":"Aprilia RSV 1000 R", "anoFab":2004, "velMax":280, "cantPue":0,"cantRue":2},{"id":872, "modelo":"Boeing 747-400", "anoFab":1989, "velMax":988,"altMax":13, "autonomia":13450},{"id":742, "modelo":"Cessna CH-1 SkyhookR","anoFab":1953, "velMax":174, "altMax":3, "autonomia":870}]';
 
-class Persona {
-  constructor({ id, dni, nombre, apellido }) {
+class Vehiculo {
+  constructor({ id, modelo, añoFabricacion, velocidadMaxima }) {
     this.id = id;
-    this.dni = dni;
-    this.nombre = nombre;
-    this.apellido = apellido;
+    this.modelo = modelo;
+    this.añoFabricacion = añoFabricacion;
+    this.velocidadMaxima = velocidadMaxima;
   }
 }
 
-class Alumno extends Persona {
-  constructor({ id, dni, nombre, apellido, cursoLetra, cursoNumero }) {
-    super({ id, dni, nombre, apellido });
-    this.cursoLetra = cursoLetra;
-    this.cursoNumero = cursoNumero;
+class Aereo extends Vehiculo {
+  constructor({ id, modelo, añoFabricacion, velocidadMaxima, alturaMaxima, autonomia }) {
+    super({ id, modelo, añoFabricacion, velocidadMaxima });
+    this.alturaMaxima = alturaMaxima;
+    this.autonomia = autonomia;
   }
 }
 
-class Docente extends Persona {
-  constructor({ id, dni, nombre, apellido, materia, año }) {
-    super({ id, dni, nombre, apellido });
-    this.materia = materia;
-    this.año = año;
+class Terrestre extends Vehiculo {
+  constructor({ id, modelo, añoFabricacion, velocidadMaxima, cantidadPuertas, cantidadRuedas }) {
+    super({ id, modelo, añoFabricacion, velocidadMaxima });
+    this.cantidadPuertas = cantidadPuertas;
+    this.cantidadRuedas = cantidadRuedas;
   }
 }
 
 let datos = JSON.parse(cadena).map((element) =>
-  element.año != undefined ? new Docente(element) : new Alumno(element)
+  element.cantidadRuedas != undefined ? new Terrestre({
+    ...element,
+    cantidadPuertas: element.cantPue,
+    cantidadRuedas: element.cantRue,
+    añoFabricacion: element.añoFabricacion,
+    velocidadMaxima: element.velMax
+  }) : new Aereo({
+    ...element,
+    alturaMaxima: element.altMax,
+    añoFabricacion: element.añoFabricacion,
+    velocidadMaxima: element.velMax
+  })
 );
 let columnas = {
   id: true,
-  dni: true,
-  nombre: true,
-  apellido: true,
-  cursoLetra: true,
-  cursoNumero: true,
-  materia: true,
-  año: true,
+  modelo: true,
+  añoFabricacion: true,
+  velocidadMaxima: true,
+  alturaMaxima: true,
+  autonomia: true,
+  cantidadPuertas: true,
+  cantidadRuedas: true,
 };
 
 let filtro = null;
@@ -61,9 +71,9 @@ function renderizarTabla() {
   let lineas = datos.filter((el) =>
     !filtro
       ? true
-      : filtro == "Docente"
-      ? el instanceof Docente
-      : el instanceof Alumno
+      : filtro == "Terrestre"
+      ? el instanceof Terrestre
+      : el instanceof Aereo
   );
 
   let container = document.createElement("div");
