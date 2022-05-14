@@ -23,3 +23,19 @@
   padding: 10px;
   margin: 2px;
 }
+#formulario {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+}
+.show {
+  display: flex !important;
+
+  flex-direction: column;
+}

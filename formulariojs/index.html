@@ -1,61 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script defer src="index.js"></script>
-    <link rel="stylesheet" href="style.css">
-  </head>
-
-  <body>
-    <div>
-      <select id="filtro">
-        <option value="">TODOS</option>
-        <option value="Terrestre">Terrestre</option>
-        <option value="Aereo">Aereo</option>
-      </select>
-      <label>
-        <input type="checkbox" name="id" class="checkbox" checked /> id</label
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script defer src="index.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div>
+            <select id="filtro">
+                <option value="">TODOS</option>
+                <option value="Terrestre">Terrestre</option>
+                <option value="Aereo">Aereo</option>
+            </select>
+            <label>
+                <input
+                    type="checkbox"
+                    name="id"
+                    class="checkbox"
+                    checked
+                > id
+            </label
       >
-      <label
-        ><input type="checkbox" name="modelo" class="checkbox" checked />
-        modelo</labeltable_header
+            <label>
+                <input
+                    type="checkbox"
+                    name="modelo"
+                    class="checkbox"
+                    checked
+                >
+                modelo
+            </labeltable_header
       >
-      <label
-        ><input
-          type="checkbox"
-          name="velocidadMaxima"
-          class="checkbox"
-          checked
-        />velocidadMaxima
-      </label>
-      <label
-        ><input
-          type="checkbox"
-          name="añoFabricacion"
-          class="checkbox"
-          checked
-        />añoFabricacion</label
+            <label>
+                <input
+                    type="checkbox"
+                    name="velocidadMaxima"
+                    class="checkbox"
+                    checked
+                >
+                velocidadMaxima
+            </label>
+            <label>
+                <input
+                    type="checkbox"
+                    name="añoFabricacion"
+                    class="checkbox"
+                    checked
+                >añoFabricacion
+            </label
       >
-      <label>
-        <input type="checkbox" name="alturaMaxima" class="checkbox" checked />
-        curso-letra
-      </label>
-      <label>
-        <input type="checkbox" name="autonomia" class="checkbox" checked />
-        curso-numero
-      </label>
-      <label
-        ><input type="checkbox" name="cantidadPuertas" class="checkbox" checked />
-        cantidadPuertas</label
+            <label>
+                <input
+                    type="checkbox"
+                    name="alturaMaxima"
+                    class="checkbox"
+                    checked
+                >
+                curso-letra
+            </label>
+            <label>
+                <input
+                    type="checkbox"
+                    name="autonomia"
+                    class="checkbox"
+                    checked
+                >
+                curso-numero
+            </label>
+            <label>
+                <input
+                    type="checkbox"
+                    name="cantidadPuertas"
+                    class="checkbox"
+                    checked
+                >
+                cantidadPuertas
+            </label
       >
-      <label
-        ><input type="checkbox" name="cantidadRuedas" class="checkbox" checked />
-        cantidadRuedas</label
+            <label>
+                <input
+                    type="checkbox"
+                    name="cantidadRuedas"
+                    class="checkbox"
+                    checked
+                >
+                cantidadRuedas
+            </label
       >
-    </div>
-    <div id="tabla"></div>
-  </body>
+        </div>
+        <div id="tabla"></div>
+        <div>
+          <button id='abrir-formulario'>
+            AGREGAR
+          </button>
+          <button id='calcular-promedio'>CALCULAR</button>
+          <div id='promedio'></div>
+        </div>
+        <div id="formulario">
+          <div>
+            <div class="form-input">
+                <label>ID</label>
+                <input class='input_formulario'type="number" name="id">
+            </div>
+            <div class="form-input">
+                <label>Modelo</label>
+                <input  class='input_formulario'type="modelo" name="modelo">
+            </div>
+            <div class="form-input">
+                <label>Año de fabricacion</label>
+                <input  class='input_formulario' type="number" name="añoFabricacion">
+            </div>
+            <div class="form-input">
+                <label>VelocidadMaxima</label>
+                <input  class='input_formulario'type="number" name="velocidadMaxima">
+            </div>
+            <div class="form-input">
+              <label></label>
+              <select name="tipo" class='input_formulario'>
+                <option value="Terrestre">Terrestre</option>
+                <option value="Aereo">Aereo</option>
+              </select>
+          </div>
+            <div class="form-input">
+                <label>Altura Maxima</label>
+                <input  class='input_formulario'type="text" name="alturaMaxima">
+            </div>
+            <div class="form-input">
+                <label>Autonomia</label>
+                <input  class='input_formulario'type="text" name="autonomia">
+            </div>
+            <div class="form-input">
+                <label>Cantidad Puertas</label>
+                <input  class='input_formulario'type="text" name="cantidadPuertas">
+            </div>
+            <div class="form-input">
+                <label>Cantidad Ruedas</label>
+                <input  class='input_formulario'type="text" name="cantidadRuedas">
+            </div>
+            <div class="form-buttons">
+              <button id='agregar'>Agregar</button>
+              <button id='modificar'>Modificar</button>
+              <button id='eliminar'>Eliminar</button>
+              <button id="cancelar">Cancelar</button>
+            </div>
+          </div>
+        </div>
+    </body>
 </html>
