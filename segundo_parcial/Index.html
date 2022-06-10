@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="formulario.js"></script>
+    <script defer src="classes.js"></script>
+    <script defer src="requests.js"></script>
+    <script defer src="index.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="list_display">
+      <div class="list_wrapper">
+        <h2>FORMULARIO LISTA</h2>
+        <div id="lista">
+          <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="form_display">
+      <form id="formulario_abm">
+        <h2>Formulario de personas</h2>
+        <input type="text" id="modo" name="modo" hidden />
+        <div>
+          <label>ID</label>
+          <input id="id" type="number" name="id" />
+        </div>
+        <div>
+          <label>dni</label>
+          <input id="dni" type="number" name="dni" />
+        </div>
+        <div>
+          <label>Nombres</label>
+          <input id="nombres" type="text" name="nombres" />
+        </div>
+        <div>
+          <label>Apellido</label>
+          <input id="apellido" type="text" name="apellido" />
+        </div>
+        <div>
+          <label>Tipo</label>
+          <select id="tipo">
+            <option value="">Seleccione...</option>
+            <option value="Alumno">Alumno</option>
+            <option value="Docente">Docente</option>
+          </select>
+        </div>
+        <div id="formulario_botones">
+          <button>Aceptar</button>
+          <button type="button" id="formulario_cancelar">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
