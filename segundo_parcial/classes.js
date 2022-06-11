@@ -1,21 +1,21 @@
-class Persona {
+class Vehiculo {
   id;
-  dni;
-  apellido;
-  nombres;
+  fabricante;
+  modelo;
+  añoLanzamiento;
 
-  constructor({ id, dni, apellido, nombres }) {
+  constructor({ id, fabricante, modelo, añoLanzamiento }) {
     this.id = id;
-    this.dni = dni;
-    this.apellido = apellido;
-    this.nombres = nombres;
+    this.fabricante = fabricante;
+    this.modelo = modelo;
+    this.añoLanzamiento = añoLanzamiento;
   }
 
   toJsonString(conId) {
     let object = {
-      dni: this.dni,
-      apellido: this.apellido,
-      nombres: this.nombres,
+      fabricante: this.fabricante,
+      modelo: this.modelo,
+      añoLanzamiento: this.añoLanzamiento,
     };
     if (conId) object.id = this.id;
     return JSON.stringify(object);
@@ -26,37 +26,34 @@ class Persona {
   }
 }
 
-class Alumno extends Persona {
-  cursoNumero;
-  cursoLetra;
+class Auto extends Vehiculo {
+  cantidadPuertas;
 
-  constructor({ id, dni, apellido, nombres, cursoNumero, cursoLetra }) {
-    super({ id, dni, apellido, nombres });
-    this.cursoNumero = cursoNumero;
-    this.cursoLetra = cursoLetra;
+  constructor({ id, fabricante, modelo, añoLanzamiento, cantidadPuertas }) {
+    super({ id, fabricante, modelo, añoLanzamiento });
+    this.cantidadPuertas = cantidadPuertas;
+
   }
 
   toJsonString(conId) {
     let obj = JSON.parse(super.toJsonString(conId));
-    obj.cursoLetra = this.cursoLetra;
-    obj.cursoNumero = this.cursoNumero;
+    obj.cantidadPuertas = this.cantidadPuertas;
     return JSON.stringify(obj);
   }
 }
 
-class Docente extends Persona {
-  año;
-  materia;
+class Camioneta extends Vehiculo {
+  transmision4x4;
 
-  constructor({ id, dni, apellido, nombres, año, materia }) {
-    super({ id, dni, apellido, nombres });
-    this.año = año;
-    this.materia = materia;
+  constructor({ id, fabricante, modelo, añoLanzamiento, transmision4x4 }) {
+    super({ id, fabricante, modelo, añoLanzamiento });
+    this.transmision4x4 = transmision4x4;
+
   }
 
   toJsonString(conId) {
     let obj = JSON.parse(super.toJsonString(conId));
-    obj.año = this.año;
+    obj.transmision4x4 = this.transmision4x4;
     obj.materia = this.materia;
     return JSON.stringify(obj);
   }
